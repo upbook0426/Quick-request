@@ -11,3 +11,4 @@ class PDFController extends Controller
         $pdf = \PDF::loadView('generate_pdf');
         return $pdf->stream('title.pdf');
 }
+}
