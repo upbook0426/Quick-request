@@ -14,7 +14,7 @@
             font-style: bold;
             font-weight: bold;
             src: url('{{ storage_path('fonts/ipag.ttf') }}') format('truetype');
-        }
+         }
         body {
             font-family: ipag !important;
         }
