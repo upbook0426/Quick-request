@@ -6,15 +6,14 @@
     <title>配送依頼書</title>
 </head>
 <body>
-<div>
- 
-<p>ABC運輸</p>
+  <div>
+     <p>ABC運輸</p>
 <form method="post" action="pdf" >
-     @csrf
+    @csrf
 <input name="textbox1" type="text">
 <input name="textbox2" type="text">
 <input type="submit" value="送信ボタン">
 </form>
-
+</div>
 </body>
 </html>
