@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
-<title></title>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title> a </title>
     <style type="text/css">
         @font-face {
             font-family: ipag;
@@ -19,8 +19,8 @@
         body {
             font-family: ipag !important;
         }
-    </style>
-　</head>
+        </style>
+</head>
 <body>
 <div>
     <table>
