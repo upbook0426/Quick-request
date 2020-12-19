@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+Use App\Http\Controllers\PDFController;
+Use App\Http\Controllers\RequestformController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('pdf','App\Http\Controllers\PDFController@generate_pdf');
+Route::post('pdf',[PDFController::class,'generate_pdf']);
+
+Route::get('index',[RequestformController::class,'index']);
+
 
 
 
