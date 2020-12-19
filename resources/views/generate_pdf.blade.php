@@ -20,30 +20,11 @@
             font-family: ipag !important;
         }
         </style>
+    <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
 </head>
-<body>
+<body>{{$data1['textbox1']}}
 <div>
-    <table>
-        <tr>
-            <td style="width:50%;">
-                <div style="padding:15px;">
-                    <p>{{$data1['textbox1']}}</p>
-                </div>
-            </td>
-            <td>test</td>
-            <td>test</td>
-        </tr>
-        <tr>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-        </tr>
-        <tr>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-        </tr>
-    </table>
+    <p　class
 </div>
 
 </body>
