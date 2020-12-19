@@ -26,7 +26,7 @@
         <tr>
             <td style="width:50%;">
                 <div style="padding:15px;">
-                    テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+                    <p>{{$data1['textbox1']}}</p>
                 </div>
             </td>
             <td>test</td>

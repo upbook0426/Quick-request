@@ -19,9 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('pdf',[PDFController::class,'generate_pdf']);
 
 Route::get('index',[RequestformController::class,'index']);
+
+Route::post('pdf',[PDFController::class,'generate_pdf']);
 
 
 

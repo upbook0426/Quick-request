@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>配送依頼書</title>
 </head>
 <body>
-<p>テスト</p>
+<div>
+ 
+<p>ABC運輸</p>
 <form method="post" action="pdf" >
      @csrf
 <input name="textbox1" type="text">
