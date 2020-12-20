@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <title>配送依頼書</title>
 </head>
 <body>
   <div>
-     <p>依頼入力フォーム</p>
+     <div class="title">依頼入力フォーム</div>
 <form method="post" action="pdf" >
     @csrf
 <label>依頼先運送会社:<input name="textbox1" type="text"></label><br>
@@ -20,9 +21,12 @@
 <label>重量:<input name="textbox8" type="text"></label><br>
 <label>M3:<input name="textbox9" type="text"></label><br>
 <label>BL no:<input name="textbox10" type="number"></label><br>
-<label>備考欄:<input name="textbox11" type="text"></label><br>
+<label for="comment">備考欄:</label><br>
+<textarea name="textbox11" id="comment" cols="40" rows="3"></textarea><br>
 
-<input type="submit" value="送信ボタン">
+<input type="submit" value="PDFで確認">
+<input type="submit" value="メール送信">
+
 </form>
 </div>
 </body>

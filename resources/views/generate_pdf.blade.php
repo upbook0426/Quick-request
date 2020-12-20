@@ -20,11 +20,14 @@
             font-family: ipag !important;
         }
         </style>
-    <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 </head>
-<body>{{$data1['textbox1']}}
+<body>
 <div>
-    <p　class
+    <div class="title">配送依頼書</div>
+    {{$data1['textbox1']}}
+    {{$data1['textbox2']}}
+    {{$data1['textbox3']}}
 </div>
 
 </body>
