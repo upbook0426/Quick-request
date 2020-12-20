@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-Use App\Http\Controllers\PDFController;
-Use App\Http\Controllers\RequestformController;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\RequestformController;
+use App\Http\Controllers\MailSendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +16,12 @@ Use App\Http\Controllers\RequestformController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("/", function () {
+    return view("welcome");
 });
 
+Route::get("index", [RequestformController::class, "index"]);
 
-Route::get('index',[RequestformController::class,'index']);
+Route::post("pdf", [PDFController::class, "generate_pdf"]);
 
-Route::post('pdf',[PDFController::class,'generate_pdf']);
-
-
-
-
+Route::get("/mail", [MailSendController::class, "send"]);
