@@ -1,3 +1,14 @@
 .title {
    font-size:30px;
 }
+
+.company-name { 
+   text-align: center; 
+   font-size:50px;
+   margin: 0;
+}
+
+.directions { 
+   text-align: center;
+   font-size:50px;
+}

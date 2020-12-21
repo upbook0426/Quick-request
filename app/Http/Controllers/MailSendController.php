@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Mail\SendMail;
+
 use Mail;
 
 class MailSendController extends Controller
@@ -12,10 +14,13 @@ class MailSendController extends Controller
     {
         $data = [];
 
-        Mail::send("emails.mail", $data, function ($message) {
-            $message
-                ->to("upbook.26@gmail.com", "Test")
-                ->subject("This is a test mail");
-        });
+        $to = [
+            [
+                "email" => "upbook426@gmail.com",
+                "name" => "TEST",
+            ],
+        ];
+
+        Mail::to($to)->send(new SendMail());
     }
 }

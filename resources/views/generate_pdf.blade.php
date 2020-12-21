@@ -22,13 +22,35 @@
         </style>
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
 </head>
-<body>
-<div>
-    <div class="title">配送依頼書</div>
-    {{$data1['textbox1']}}
-    {{$data1['textbox2']}}
-    {{$data1['textbox3']}}
-</div>
+<header> 
+    <h1 class="company-name"> 
+        ABC株式会社 </h1> 
+        <h2 class="transport-company"> 
+            <p style="border-bottom: solid 2px #555"> 
+                {{ $textbox1 ?? ''}} </p>
+            </h2> 
+</header> 
+        <body> 
+                <div class="directions"> 配送指示書</div>
+                <ul > 
+                    <li　style="display: inline-block;">（配送先）</li> 
+                    <li style=
+                    " margin-left:10px; 
+                    width: 650px; 
+                    height: 110px; 
+                    font-weight: bold; 
+                    border: solid 3px #000000; 
+                    display: inline-block;" >
+        Hello TechAcademy!! </li> </ul> 
+        <ul > 
+            <li　style="display: inline-block;">（配送先）</li> 
+            <li style=" margin-left:10px;
+             width: 80%; height: 50px; 
+             font-weight: bold; 
+             border: solid 3px #000000; 
+             display: inline-block;" >Hello TechAcademy!!
+             </li> 
+            </ul> 
+        </body>
 
-</body>
 </html>
