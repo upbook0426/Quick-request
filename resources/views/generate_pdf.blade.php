@@ -27,7 +27,7 @@
         ABC株式会社 </h1> 
         <h2 class="transport-company"> 
             <p style="border-bottom: solid 2px #555"> 
-                {{ $textbox1 ?? ''}} </p>
+                {{ $data1['textbox1'] ?? ''}} </p>
             </h2> 
 </header> 
         <body> 
@@ -41,14 +41,14 @@
                     font-weight: bold; 
                     border: solid 3px #000000; 
                     display: inline-block;" >
-        Hello TechAcademy!! </li> </ul> 
+        </li> </ul> 
         <ul > 
             <li　style="display: inline-block;">（配送先）</li> 
             <li style=" margin-left:10px;
              width: 80%; height: 50px; 
              font-weight: bold; 
              border: solid 3px #000000; 
-             display: inline-block;" >Hello TechAcademy!!
+             display: inline-block;" >
              </li> 
             </ul> 
         </body>

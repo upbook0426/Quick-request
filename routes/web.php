@@ -20,8 +20,8 @@ Route::get("/", function () {
     return view("welcome");
 });
 
-Route::get("index", [RequestformController::class, "index"]);
+Route::get("index", [RequestformController::class, "index"])->name("index");
 
 Route::post("pdf", [PDFController::class, "generate_pdf"]);
 
-Route::get("/mail", [MailSendController::class, "send"]);
+Route::post("mail", [MailSendController::class, "send"]);

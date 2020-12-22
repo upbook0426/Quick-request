@@ -22,5 +22,7 @@ class MailSendController extends Controller
         ];
 
         Mail::to($to)->send(new SendMail());
+
+        return view("emails.sent");
     }
 }
