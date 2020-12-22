@@ -13,9 +13,10 @@ class MailSendController extends Controller
     public function send()
     {
         $data = [];
-        $$to = [
+        $email = Request::input("email");
+        $to = [
             [
-                "email" => "upbook426@gmail.com",
+                "email" => $email,
                 "name" => "TEST",
             ],
         ];
