@@ -16,12 +16,11 @@ use App\Http\Controllers\MailSendController;
 |
 */
 
-Route::get("/", function () {
-    return view("welcome");
-});
-
+//依頼書入力
 Route::get("index", [RequestformController::class, "index"])->name("index");
 
+//PDF出力
 Route::post("pdf", [PDFController::class, "generate_pdf"]);
 
+//メール送信
 Route::post("mail", [MailSendController::class, "send"]);

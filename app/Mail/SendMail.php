@@ -29,11 +29,14 @@ class SendMail extends Mailable
      */
     public function build(Request $post)
     {
+        //入力データー取得
         $data1 = $post::all();
+        
         $pdf = \PDF::loadView("generate_pdf", compact("data1"));
         return $this->view("emails.mail")
-            ->from("upbook.26@gmail.com", "Test")
-            ->subject("This is a test mail")
-            ->attachData($pdf->output(), "filename.pdf");
+            ->from("upbook.26@gmail.com", "担当者")
+            ->subject("依頼書送付")
+        //PDFファイル添付
+            ->attachData($pdf->output(), "配送依頼書.pdf");
     }
 }

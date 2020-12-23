@@ -1,18 +1,40 @@
 .title {
-   font-size:30px;
+  font-size: 30px;
 }
 
-.company-name { 
-   text-align: center; 
-   font-size:50px;
-   margin: 0;
+.company-name {
+  text-align: center;
+  font-size: 50px;
+  margin: 0;
 }
 
-.directions { 
-   text-align: center;
-   font-size:50px;
+.directions {
+  text-align: center;
+  font-size: 50px;
 }
 
 .transport-company {
-   border-bottom: solid 2px"
+  border-bottom: solid 2px;
+}
+
+.item {
+  display: inline-block;
+}
+
+.right-line {
+  margin-left: 10px;
+  width: 650px;
+  height: 110px;
+  font-weight: bold;
+  border: solid 3px #000000;
+  display: inline-block;
+}
+
+.right-box {
+  margin-left: 10px;
+  width: 650px;
+  height: 110px;
+  font-weight: bold;
+  border: solid 3px #000000;
+  display: inline-block;
 }
