@@ -10,9 +10,16 @@
   　    <div class="title">依頼入力フォーム</div>
 　　        <form >
 　           {{ csrf_field() }}
-                <label>●依頼先運送会社:
-                    <input name="textbox1" type="text">
-                </label><br>
+                <label>●依頼先運送会社:</label>
+                 <input type="text" name="request-to" list="carrier" 
+                        placeholder="テキスト入力もしくは選択して下さい" 
+                        autocomplete="off">
+                    <datalist id="carrier">
+                     <option value="三信運輸㈱">
+  　                 <option value="東和海陸輸送㈱">
+  　                 <option value="川之江港湾運送㈱">
+                    </datalist>
+                <br>
                 <label>●引取日時:
                 　　 <input name="pickdate" type="text">
                 </label><br>
@@ -24,6 +31,9 @@
                 </label><br>
                 <label>●配送先:
                 　　<input name="textbox5" type="text">
+                </label><br>
+                <label>●車種:
+                　　<input name="type-of-truck" type="text">
                 </label><br>
                 <label>●本船名:
             　　 <input name="textbox6" type="text">

@@ -13,6 +13,7 @@ class MailSendController extends Controller
     public function send()
     {
         $data = [];
+        //宛先のアドレス情報を取得
         $email = Request::input("email");
         $to = [
             [

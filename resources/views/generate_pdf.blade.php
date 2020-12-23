@@ -26,10 +26,10 @@
         <h1 class="company-name"> 
             ABC株式会社 
         </h1> 
-        　<h2 class="transport-company"> 
-        　　<p style="border-bottom: solid 2px #555"> 
-                {{ $data1['textbox1'] ?? ''}} </p>
-        　</h2> 
+        　 <p class="transport-company"> 
+        　　　{{ $data1['request-to'] ?? ''}} 
+          </p>
+        　
     </header> 
         <body> 
            <div class="directions"> 配送指示書</div>
