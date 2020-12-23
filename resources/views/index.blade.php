@@ -21,7 +21,7 @@
                     </datalist>
                 <br>
                 <label>●引取日時:
-                　　 <input name="pickdate" type="text">
+                　　 <input name="pick-date" type="text">
                 </label><br>
                 <label>●引取先:
                 　　 <input name="pickplace" type="text">
