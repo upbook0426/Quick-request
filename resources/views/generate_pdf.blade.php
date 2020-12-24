@@ -31,6 +31,7 @@
           </p>
     </header> 
         <body> 
+            <body>
            <div class="directions"> 配送指示書</div>
             <ul > 
                 <li class="item">（引取日）</li> 

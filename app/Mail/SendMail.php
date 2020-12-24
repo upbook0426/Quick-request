@@ -34,7 +34,7 @@ class SendMail extends Mailable
 
         $pdf = \PDF::loadView("generate_pdf", compact("data1"));
         return $this->text("emails.mail")
-            ->from("upbook.26@gmail.com", "担当者")
+            ->from("upbook.26@gmail.com")
             ->subject("依頼書送付")
             //PDFファイル添付
             ->attachData($pdf->output(), "配送依頼書.pdf");
