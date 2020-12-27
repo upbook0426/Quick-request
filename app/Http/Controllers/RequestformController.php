@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Address;
 
 class RequestformController extends Controller
 {
     public function index()
     {
-        return view("index");
+        $addresses = Address::all();
+
+        return view("index", ["addresses" => $addresses]);
     }
 }

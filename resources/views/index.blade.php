@@ -32,6 +32,9 @@
                 </label><br>
                 <label>●配送先:
                 　　<input name="textbox5" type="text">
+                  @foreach ($addresses as $address)
+                  <p> {{ $address -> companyname }} </p> 
+                  @endforeach 
                 </label><br>
                 <label>●車種:
                 　　<input name="type-of-truck" type="text">
