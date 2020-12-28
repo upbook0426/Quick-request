@@ -24,11 +24,13 @@
 .right-line {
   margin-left: 10px;
   width: 650px;
-  height: 110px;
+  height: 30px;
   font-weight: bold;
   border: solid 3px #000000;
   display: inline-block;
 }
+
+
 
 .right-box {
   margin-left: 10px;
@@ -62,3 +64,8 @@
   color: #fff;
   z-index: 2;
 }
+
+.label {
+  vertical-align: top;
+  }
+ 

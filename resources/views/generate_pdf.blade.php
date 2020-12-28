@@ -35,7 +35,7 @@
            <div class="directions"> 配送指示書</div>
             <ul > 
                 <li class="item">（引取日）</li> 
-                <li class="right-line"> {{ $data1['request-to'] }}</li> 
+                <li class="right-line"><p>{{ $data1['request-to'] }}</p></li> 
             </ul> 
             <ul > 
                 <li class="item">（集荷地）</li> 

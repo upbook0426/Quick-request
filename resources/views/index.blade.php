@@ -11,8 +11,7 @@
         <form >
            {{ csrf_field() }}
                 <label>●依頼先運送会社:</label>
-                <script src=" {{ mix('js/test.js') }}"></script>
-                 <input type="text" name="request-to" list="carrier" 
+                <input type="text" name="request-to" list="carrier" 
                         placeholder="テキスト入力もしくは選択して下さい" 
                         autocomplete="off">
                     <datalist id="carrier">
@@ -22,19 +21,36 @@
                     </datalist>
                 <br>
                 <label>●引取日時:
-                　　 <input name="pick-date" type="text">
+                    <input name="pick-date" type="text">
                 </label><br>
                 <label>●引取先:
-                　　 <input name="pickplace" type="text">
+                    <input name="pickplace" type="text">
                 </label><br>
                 <label>●配送日時:
                     <input name="textbox4" type="text">
                 </label><br>
                 <label>●配送先:
-                　　<input name="textbox5" type="text">
+                  会社名<input name="delivery_companyname" type="text" list="companyname"
+                    placeholder="テキスト入力もしくは選択して下さい">
+                <datalist id="companyname">
                   @foreach ($addresses as $address)
-                  <p> {{ $address -> companyname }} </p> 
+                  <option> {{ $address -> companyname }} 
                   @endforeach 
+                  </datalist> <br>
+                  住所<input name="address" type="text" list="address"
+                    placeholder="テキスト入力もしくは選択して下さい">
+                <datalist id="address">
+                  @foreach ($addresses as $address)
+                  <option> {{ $address -> address }} 
+                  @endforeach 
+                  </datalist><br>
+                  TEL<input name="tel" type="text" list="tel"
+                    placeholder="テキスト入力もしくは選択して下さい">
+                <datalist id="tel">
+                  @foreach ($addresses as $address)
+                  <option> {{ $address -> tel }} 
+                  @endforeach 
+                  </datalist> 
                 </label><br>
                 <label>●車種:
                 　　<input name="type-of-truck" type="text">
@@ -54,10 +70,11 @@
                 <label>●BL no:
                     <input name="textbox10" type="number">
                 </label><br>
-                <label for="comment">●備考欄:
-                </label><br>
+                <p>
+                <label class="label" for="comment">●備考欄:</label>
                 <textarea name="textbox11" id="comment" cols="40" rows="3">
-                </textarea><br>
+                </textarea>
+                </p><br>
         
                 <input type="submit" value="PDFで確認" formaction="pdf" formmethod="POST"/>
                 <br>
