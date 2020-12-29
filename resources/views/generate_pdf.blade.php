@@ -20,7 +20,7 @@
             font-family: ipag !important;
         }
         </style>
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 </head>
     <header> 
         <h1 class="company-name"> 
