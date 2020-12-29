@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\RequestformController;
 use App\Http\Controllers\MailSendController;
+use App\Http\Controllers\AddressesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,16 @@ use App\Http\Controllers\MailSendController;
 |
 */
 
+//配送先一覧
+Route::get("addresses", [AddressesController::class, "index"])->name(
+    "addresses"
+);
+Route::get("addresses/{id}", [AddressesController::class, "view"])->name(
+    "address"
+);
+
 //依頼書入力
-Route::get("index", [RequestformController::class, "index"])->name("index");
+Route::get("index", [RequestformController::class, "index"])->name("index"); //routeに名前
 
 //PDF出力
 Route::post("pdf", [PDFController::class, "generate_pdf"]);

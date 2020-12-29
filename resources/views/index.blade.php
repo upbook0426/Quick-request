@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
     <title>配送依頼書</title>
 </head>
 <body>
       <div class="title">依頼入力フォーム</div>
+       <div class="form">
         <form >
            {{ csrf_field() }}
+           <button type="button" onclick="location.href='{{ route('addresses') }}'">戻る</button>
+           <br>
                 <label>●依頼先運送会社:</label>
                 <input type="text" name="request-to" list="carrier" 
                         placeholder="テキスト入力もしくは選択して下さい" 
@@ -29,34 +32,22 @@
                 <label>●配送日時:
                     <input name="textbox4" type="text">
                 </label><br>
-                <label>●配送先:
-                  会社名<input name="delivery_companyname" type="text" list="companyname"
-                    placeholder="テキスト入力もしくは選択して下さい">
-                <datalist id="companyname">
-                  @foreach ($addresses as $address)
-                  <option> {{ $address -> companyname }} 
-                  @endforeach 
-                  </datalist> <br>
-                  住所<input name="address" type="text" list="address"
-                    placeholder="テキスト入力もしくは選択して下さい">
-                <datalist id="address">
-                  @foreach ($addresses as $address)
-                  <option> {{ $address -> address }} 
-                  @endforeach 
-                  </datalist><br>
-                  TEL<input name="tel" type="text" list="tel"
-                    placeholder="テキスト入力もしくは選択して下さい">
-                <datalist id="tel">
-                  @foreach ($addresses as $address)
-                  <option> {{ $address -> tel }} 
-                  @endforeach 
-                  </datalist> 
-                </label><br>
+                
+                <label for="delivery">●配送先:</label>
+                  <textarea name="textbox11" id="delivery" cols="40" rows="3">
+                    @if(!isset($address))
+                    
+                    @else  
+                    {{ $address->companyname }}
+                     {{ $address->address }}
+                     {{ $address->tel }}
+                    @endif
+                </textarea><br>
                 <label>●車種:
-                　　<input name="type-of-truck" type="text">
+                   <input name="type-of-truck" type="text">
                 </label><br>
                 <label>●本船名:
-            　　 <input name="textbox6" type="text">
+                   <input name="textbox6" type="text">
                 </label><br>
                 <label>●Package:
                     <input name="textbox7" type="text">
@@ -70,11 +61,11 @@
                 <label>●BL no:
                     <input name="textbox10" type="number">
                 </label><br>
-                <p>
-                <label class="label" for="comment">●備考欄:</label>
+
+                <label for="comment">●備考欄:</label>
                 <textarea name="textbox11" id="comment" cols="40" rows="3">
                 </textarea>
-                </p><br>
+                <br>
         
                 <input type="submit" value="PDFで確認" formaction="pdf" formmethod="POST"/>
                 <br>
@@ -87,6 +78,7 @@
                     data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> 
                         データ送信中ですしばらくお待ちください。 ...">データ送信 </button>
             </form>
+        </div> 
     </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
