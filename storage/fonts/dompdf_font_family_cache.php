@@ -81,4 +81,7 @@
     'normal' => $fontDir . '/ipag-normal_0e6f2c872c376df29eaa683baf74275f',
     'bold' => $fontDir . '/ipag-bold_0e6f2c872c376df29eaa683baf74275f',
   ),
+  'biorhyme expanded' => array(
+    'normal' => $fontDir . '/biorhyme-expanded-normal_5c2464f49c3933947d40f17be78b1ecd',
+  ),
 ) ?>

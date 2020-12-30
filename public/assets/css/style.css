@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme+Expanded');
+
+#index {
+  padding-left: 50px;
+}
+
 .title {
   font-size: 30px;
-  text-align: center;
+  margin-left: 90px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .company-name {
@@ -74,3 +82,24 @@ label {
   margin-left: 50px;
   line-height: 30px;
 }
+
+/*addresses */
+
+.font{
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.new {
+   font-size: 25px;
+}
+.list {
+   font-size: 25px;
+   padding-bottom: 0;
+   margin-bottom: 0;
+}
+
+.addresses {
+  margin-top: 0;
+  font-size: 18px;
+}
+

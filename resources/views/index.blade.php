@@ -4,30 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
+    {{-- 送信中の表示 --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
+    <script src="{{ asset('js/sending.js') }}"></script>
+    {{-- 引取日時の選択 --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="/js/datepicker-ja.js"></script>
+    <script src="{{ asset('js/datepicker.js') }}"></script>
+    
     <title>配送依頼書</title>
 </head>
-<body>
-      <div class="title">依頼入力フォーム</div>
+<body #index>
+ 
+      <div class="font title">依頼入力フォーム</div>
        <div class="form">
         <form >
            {{ csrf_field() }}
-           <button type="button" onclick="location.href='{{ route('addresses') }}'">戻る</button>
+           <a href='{{ route('addresses') }}'>戻る</a>
+           <input class="datepicker" type="text" />
+           <input class="datepicker" type="text" />
+          
            <br>
                 <label>●依頼先運送会社:</label>
-                <input type="text" name="request-to" list="carrier" 
+                <input type="text" name="request-to" style="width:200px;" list="carrier" 
                         placeholder="テキスト入力もしくは選択して下さい" 
                         autocomplete="off">
                     <datalist id="carrier">
-                   <option value="三信運輸㈱">
-                   <option value="東和海陸輸送㈱">
-                   <option value="川之江港湾運送㈱">
+                   <option value="hogehoge運輸㈱">
+                   <option value="piyopiyo海陸輸送㈱">
+                   <option value="fugafuga港湾運送㈱">
                     </datalist>
                 <br>
                 <label>●引取日時:
-                    <input name="pick-date" type="text">
+                    <input id="datepicker" type="text" />
+                    <input id="datepicker" name="pick-date" type="text"/>
                 </label><br>
                 <label>●引取先:
-                    <input name="pickplace" type="text">
+                    <input name="pickplace" type="text"/>
                 </label><br>
                 <label>●配送日時:
                     <input name="textbox4" type="text">
@@ -81,22 +95,4 @@
         </div> 
     </body>
 </html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('.notrepeat').each(function(index, element){
-        $(this).click(function () {
-            if ( $(this).data('loading-text') ){
-                $(this).html( $(this).data('loading-text') );
-            }
-            else {
-                $(this).html("<i class='fa fa-circle-o-notch fa-spin'></i> データ送信中 ... ");
-            }
-            var jq_obj = $(this);
-            setTimeout( function() {
-                jq_obj.attr('disabled', true);
-            }, 1, jq_obj );
-        });
-    });
-});
-</script>
+
