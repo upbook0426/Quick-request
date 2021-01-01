@@ -64,9 +64,6 @@
                    <option value="10ton車">
                     </datalist>
                 </label><br>
-                <label>●本船名:
-                   <input name="vessel" type="text">
-                </label><br>
                 <label>●Package:
                     <input name="package" type="text">
                 </label><br>
@@ -76,23 +73,23 @@
                 <label>●M3:
                     <input name="M3" type="text">
                 </label><br>
-                <label>●BL no:
-                    <input name="BL" type="text">
-                </label><br>
-
                 <label for="remark">●備考欄:</label>
                 <textarea name="remark" id="remark" cols="35" rows="3">
                 </textarea>
                 <br>
-        
                 <button class="submit_button" type="submit" formaction="/pdf" formmethod="post">
                     PDF出力</button>
                 <br>
                 <br>
-                <label>メールアドレス：
-                    <input  type="email" name="email" size="30" maxlength="40">
-                </label>
-                <br>
+                <label>送信先メールアドレス:
+                    <input type="email" name="email" style="width:200px;" list="email" 
+                         placeholder="テキスト入力もしくは選択して下さい" 
+                         autocomplete="off">
+                     <datalist id="email">
+                    <option value="upbook426@gmail.com">hohoge運送会社</option>
+                    <option value="up_book26@yahoo.co.jp">piyopiyo海陸輸送㈱</option>
+                     </datalist>
+                 </label><br>
                     <button class="submit_button" type="submit" class="notrepeat" formaction="/mail" formmethod="post" 
                     data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> 
                         データ送信中ですしばらくお待ちください。 ...">PDF添付・メール送信 </button>

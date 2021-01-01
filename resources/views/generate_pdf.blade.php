@@ -33,28 +33,42 @@
         <body> 
             
            <div class="directions"> 配送指示書</div>
-             <p>（引取日）<p><br>
-                <p class="line">{{ $data1['pickdate'] }}</p> 
-                
-            <ul > 
-                <li class="item">（引取先）</li> 
-                <li class="box"><p>{{ $data1['pickplace'] }}</p> </li> 
-            </ul> 
-            <ul > 
-                <li class="item">（配送日時）</li> 
-                <li class="line"><p>{{ $data1['deliverydate'] }}</p></li> 
-            </ul>
-            <ul > 
-                <li class="item">（配送先）</li> 
-                <li class="box"><p>{{ $data1['deliveryplace'] }}</p></li> 
-            </ul>
-                
-            <p>(車種){{ $data1['trucktype'] }}</p>
-            <p>(本船名){{ $data1['vessel'] }}</p>
-            <p>(Package){{ $data1['package'] }}</p>
-            <p>(重量){{ $data1['weight'] }}</p>
-            <p>(M3){{ $data1['M3'] }}</p>
-            <p>(BL no){{ $data1['BL'] }}</p>
-            <p>(備考欄){{ $data1['remark'] }}</p>
+             <div class="box">
+             <span class="box-title">(引取日)</span>
+             <p>{{ $data1['pickdate'] }}</p> 
+             </div>  
+             <div class="box-large">
+                <span class="box-title">(引取先)</span>
+                <p>{{ $data1['pickplace'] }}</p> 
+            </div>
+            <div class="box">
+                <span class="box-title">(配送日時)</span>
+                <p>{{ $data1['deliverydate'] }}</p> 
+            </div> 
+            <div class="box-large">
+                <span class="box-title">(配送先)</span>
+                <p>{{ $data1['deliveryplace'] }}</p> 
+            </div> 
+            <div class="box">
+                <span class="box-title">(車種)</span>
+                <p>{{ $data1['typetruck'] }}</p> 
+            </div>
+            <div class="box">
+                <span class="box-title">(Package)</span>
+                <p>{{ $data1['package'] }}</p> 
+            </div>
+            </div>
+            <div class="box">
+                <span class="box-title">(Weight)</span>
+                <p>{{ $data1['weight'] }}</p> 
+            </div>
+            <div class="box">
+                <span class="box-title">(M3)</span>
+                <p>{{ $data1['M3'] }}</p> 
+            </div>
+           <div class="box-large">
+                <span class="box-title">(備考欄)</span>
+                <p>{{ $data1['remark'] }}</p> 
+            </div>
         </body>
 </html>

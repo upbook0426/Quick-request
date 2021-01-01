@@ -1,5 +1,4 @@
-
- $(document).ready(function() {
+$(document).ready(function() {
     $('.notrepeat').each(function(index, element){
         $(this).click(function () {
             if ( $(this).data('loading-text') ){

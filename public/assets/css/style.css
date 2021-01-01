@@ -29,28 +29,84 @@
 }
 
 .item {
-  display: inline-block;
+   margin-bottom:0;
 }
 
 .line {
+  margin-top:0;
   width: 650px;
   height: 30px;
   font-weight: bold;
   border: solid 3px #000000;
-  float: left;
 }
 
 
 .box {
-   width: 650px;
-  height: 110px;
-  font-weight: bold;
-  border: solid 3px #000000;
-  float: left;
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #000;
+  width:550px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.box-large {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #000;
+  height: 60px;
+  width:550px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
+.box .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: -3px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  background: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}
+.box p {
+  margin: 0; 
+  padding: 0;
+}
 
+.box-large .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: -3px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  background: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}
+.box-large p {
+  margin: 0; 
+  padding: 0;
+}
 
+.side {
+  width:290px;
+  float: left;
+}
+.side-right {
+  width:290px;
+  float: right;
+}
 
 /* 入力フォーム */
 label {
