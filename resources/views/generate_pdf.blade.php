@@ -27,24 +27,34 @@
             ABC株式会社 
         </h1> 
           <p class="transport-company"> 
-            {{ $data1['request-to'] ?? ''}} 
+            {{ $data1['request-to']}} 御中
           </p>
     </header> 
         <body> 
-            <body>
+            
            <div class="directions"> 配送指示書</div>
+             <p>（引取日）<p><br>
+                <p class="line">{{ $data1['pickdate'] }}</p> 
+                
             <ul > 
-                <li class="item">（引取日）</li> 
-                <li class="right-line"><p>{{ $data1['request-to'] }}</p></li> 
+                <li class="item">（引取先）</li> 
+                <li class="box"><p>{{ $data1['pickplace'] }}</p> </li> 
             </ul> 
             <ul > 
-                <li class="item">（集荷地）</li> 
-                <li class="right-box">{{ $data1['request-to'] }} </li> 
-            </ul> 
-            <ul > 
-                <li class="item">（集荷地）</li> 
-                <li class="right-box">{{ $data1['request-to'] }} </li> 
+                <li class="item">（配送日時）</li> 
+                <li class="line"><p>{{ $data1['deliverydate'] }}</p></li> 
             </ul>
-        
+            <ul > 
+                <li class="item">（配送先）</li> 
+                <li class="box"><p>{{ $data1['deliveryplace'] }}</p></li> 
+            </ul>
+                
+            <p>(車種){{ $data1['trucktype'] }}</p>
+            <p>(本船名){{ $data1['vessel'] }}</p>
+            <p>(Package){{ $data1['package'] }}</p>
+            <p>(重量){{ $data1['weight'] }}</p>
+            <p>(M3){{ $data1['M3'] }}</p>
+            <p>(BL no){{ $data1['BL'] }}</p>
+            <p>(備考欄){{ $data1['remark'] }}</p>
         </body>
 </html>

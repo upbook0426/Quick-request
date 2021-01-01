@@ -7,7 +7,7 @@
     {{-- 送信中の表示 --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
     <script src="{{ asset('js/sending.js') }}"></script>
-    {{-- 引取日時の選択 --}}
+    {{-- 日程の選択 --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="/js/datepicker-ja.js"></script>
@@ -22,9 +22,6 @@
         <form >
            {{ csrf_field() }}
            <a href='{{ route('addresses') }}'>戻る</a>
-           <input class="datepicker" type="text" />
-           <input class="datepicker" type="text" />
-          
            <br>
                 <label>●依頼先運送会社:</label>
                 <input type="text" name="request-to" style="width:200px;" list="carrier" 
@@ -37,18 +34,18 @@
                     </datalist>
                 <br>
                 <label>●引取日時:
-                    <input id="datepicker" type="text" />
-                    <input id="datepicker" name="pick-date" type="text"/>
+                    <input class="datepicker" name="pickdate" type="text" >
                 </label><br>
-                <label>●引取先:
-                    <input name="pickplace" type="text"/>
-                </label><br>
+                <label for="pickplace">●引取先:</label>
+                    <textarea class="pickplace" name="pickplace" type="text" cols="35" rows="5">
+                    </textarea> 
+                <br>
                 <label>●配送日時:
-                    <input name="textbox4" type="text">
+                    <input class="datepicker" name="deliverydate" type="text">
                 </label><br>
                 
                 <label for="delivery">●配送先:</label>
-                  <textarea name="textbox11" id="delivery" cols="40" rows="3">
+                  <textarea name="deliveryplace" type="text" cols="35" rows="5">
                     @if(!isset($address))
                     
                     @else  
@@ -58,39 +55,47 @@
                     @endif
                 </textarea><br>
                 <label>●車種:
-                   <input name="type-of-truck" type="text">
+                   <input type="text" name="typetruck" style="width:200px;" list="truck" 
+                        placeholder="テキスト入力もしくは選択して下さい" 
+                        autocomplete="off">
+                    <datalist id="truck">
+                   <option value="2ton車">
+                   <option value="4ton車">
+                   <option value="10ton車">
+                    </datalist>
                 </label><br>
                 <label>●本船名:
-                   <input name="textbox6" type="text">
+                   <input name="vessel" type="text">
                 </label><br>
                 <label>●Package:
-                    <input name="textbox7" type="text">
+                    <input name="package" type="text">
                 </label><br>
                 <label>●重量:
-                    <input name="textbox8" type="text">
+                    <input name="weight" type="text">
                 </label><br>
                 <label>●M3:
-                    <input name="textbox9" type="text">
+                    <input name="M3" type="text">
                 </label><br>
                 <label>●BL no:
-                    <input name="textbox10" type="number">
+                    <input name="BL" type="text">
                 </label><br>
 
-                <label for="comment">●備考欄:</label>
-                <textarea name="textbox11" id="comment" cols="40" rows="3">
+                <label for="remark">●備考欄:</label>
+                <textarea name="remark" id="remark" cols="35" rows="3">
                 </textarea>
                 <br>
         
-                <input type="submit" value="PDFで確認" formaction="pdf" formmethod="POST"/>
+                <button class="submit_button" type="submit" formaction="/pdf" formmethod="post">
+                    PDF出力</button>
                 <br>
                 <br>
                 <label>メールアドレス：
-                    <input type="email" name="email" size="30" maxlength="40">
+                    <input  type="email" name="email" size="30" maxlength="40">
                 </label>
                 <br>
-                    <button type="submit" class="notrepeat" formaction="mail" formmethod="POST" 
+                    <button class="submit_button" type="submit" class="notrepeat" formaction="/mail" formmethod="post" 
                     data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> 
-                        データ送信中ですしばらくお待ちください。 ...">データ送信 </button>
+                        データ送信中ですしばらくお待ちください。 ...">PDF添付・メール送信 </button>
             </form>
         </div> 
     </body>
