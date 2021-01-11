@@ -19,22 +19,14 @@ on file "pdf.php" in directory.
 
 # Requirement
 
-- Laravel 3.5.2
-- php
-  \*Laraveldompdf
+Laravel 8.17.2
+php 7.3.11
+Laraveldompdf
 
 # Installation
 
 ```bash
 composer require barryvdh/laravel-dompdf
-```
-
-# Usage
-
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
 ```
 
 # Note
@@ -46,7 +38,7 @@ I would be really appreciate if someone who help to advise me to solve this
 
 # Author
 
-- Upbook
+-   Upbook
 
 # License
 
