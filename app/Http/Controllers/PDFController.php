@@ -11,7 +11,7 @@ class PDFController extends Controller
     public function generate_pdf(Request $post)
     {
         $data1 = $post::all();
-        //
+        //PDFを出力
         $pdf = \PDF::loadView("generate_pdf", compact("data1"));
         return $pdf->stream("title.pdf");
     }

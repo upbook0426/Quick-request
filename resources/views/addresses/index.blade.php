@@ -15,6 +15,7 @@
     
     <p class="list font">■登録配送先一覧</p>
     <ul class="addresses">
+    {{--住所データを取得--}}
     @foreach ($addresses as $address)
     <li><a href="{{ route('address',$address->id) }}">
       {{ $address->companyname }}</a></li>

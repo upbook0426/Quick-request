@@ -28,6 +28,7 @@
                         placeholder="テキスト入力もしくは選択して下さい" 
                         autocomplete="off">
                     <datalist id="carrier">
+                {{--テスト用データ--}}
                    <option value="hogehoge運輸㈱">
                    <option value="piyopiyo海陸輸送㈱">
                    <option value="fugafuga港湾運送㈱">
@@ -86,6 +87,7 @@
                          placeholder="テキスト入力もしくは選択して下さい" 
                          autocomplete="off">
                      <datalist id="email">
+                    {{--テスト用データ--}}
                     <option value="upbook426@gmail.com">hohoge運送会社</option>
                     <option value="up_book26@yahoo.co.jp">piyopiyo海陸輸送㈱</option>
                      </datalist>

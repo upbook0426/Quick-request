@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title> a </title>
     <style type="text/css">
+       {{- フォント指定 -}}
         @font-face {
             font-family: ipag;
             font-style: normal;
@@ -31,7 +32,7 @@
           </p>
     </header> 
         <body> 
-            
+            {{--入力フォーム情報を順に取得--}}
            <div class="directions"> 配送指示書</div>
              <div class="box">
              <span class="box-title">(引取日)</span>
