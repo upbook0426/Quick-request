@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title> a </title>
     <style type="text/css">
-       {{- フォント指定 -}}
+       
         @font-face {
             font-family: ipag;
             font-style: normal;
@@ -70,6 +70,11 @@
            <div class="box-large">
                 <span class="box-title">(備考欄)</span>
                 <p>{{ $data1['remark'] }}</p> 
+            </div>
+            <div class="sign">
+                <p>ABC株式会社</p><br>
+                <p>Tel:123-456</p><br>
+                <p>Fax:123-456<p>
             </div>
         </body>
 </html>

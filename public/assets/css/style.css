@@ -107,6 +107,9 @@
   width:290px;
   float: right;
 }
+.sign {
+  text-align: right;
+}
 
 /* 入力フォーム */
 label {
