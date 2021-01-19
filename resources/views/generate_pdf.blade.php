@@ -48,7 +48,9 @@
             </div> 
             <div class="box-large">
                 <span class="box-title">(配送先)</span>
-                <p>{{ $data1['deliveryplace'] }}</p> 
+                <p>{{ $data1['delivery_companyname'] }}</p>
+                <p>{{ $data1['delivery_address'] }}</p> 
+                <p>TEL:{{ $data1['delivery_tel'] }}</p> 
             </div> 
             <div class="box">
                 <span class="box-title">(車種)</span>

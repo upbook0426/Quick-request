@@ -35,26 +35,25 @@
                     </datalist>
                 <br>
                 <label>●引取日時:
-                    <input class="datepicker" name="pickdate" type="text" >
+                    <input class="datepicker" name="pickdate" type="text" placeholder="日時を指定して下さい">
                 </label><br>
                 <label for="pickplace">●引取先:</label>
                     <textarea class="pickplace" name="pickplace" type="text" cols="35" rows="5">
                     </textarea> 
                 <br>
                 <label>●配送日時:
-                    <input class="datepicker" name="deliverydate" type="text">
+                    <input class="datepicker" name="deliverydate" type="text" placeholder="日時を指定して下さい">
                 </label><br>
                 
-                <label for="delivery">●配送先:</label>
-                  <textarea name="deliveryplace" type="text" cols="35" rows="5">
-                    @if(!isset($address))
-                    
-                    @else  
-                    {{ $address->companyname }}
-                     {{ $address->address }}
-                     {{ $address->tel }}
-                    @endif
-                </textarea><br>
+                <label>●配送先:
+                    <input type="text" name="delivery_companyname" placeholder="会社名"  
+                    value={{ $address->companyname ?? ''}}><br>
+                    <input type="text" name="delivery_address" style="width:300px; margin-left:75px" placeholder="住所"
+                    value={{ $address->address ?? '' }} ><br>
+                    </span><input type="text" name="delivery_tel"  style="margin-left:75px" placeholder="電話番号"
+                    value={{ $address->tel ?? '' }}>
+                </label><br>
+                <a href='{{ route('addresses') }}'>配送先を登録しておく</a><br>
                 <label>●車種:
                    <input type="text" name="typetruck" style="width:200px;" list="truck" 
                         placeholder="テキスト入力もしくは選択して下さい" 
@@ -84,7 +83,7 @@
                 <br>
                 <label>送信先メールアドレス:
                     <input type="email" name="email" style="width:200px;" list="email" 
-                         placeholder="テキスト入力もしくは選択して下さい" 
+                         placeholder="入力もしくは選択して下さい" 
                          autocomplete="off">
                      <datalist id="email">
                     {{--テスト用データ--}}

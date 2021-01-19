@@ -126,6 +126,10 @@ textarea {
     text-align: left;
 }
 
+#right {
+    margin-left:100px;
+}
+
 .submit_button {
 font-size: 1.4em;
 font-weight: bold;
