@@ -7,10 +7,11 @@ use App\Models\Address;
 
 class RequestformController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $addresses = Address::all();
-
-        return view("index", ["addresses" => $addresses]);
+        return view("index", [
+            "addresses" => $addresses
+        ]);
     }
 }

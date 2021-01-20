@@ -25,7 +25,7 @@
            <br>
                 <label>●依頼先運送会社:</label>
                 <input type="text" name="request-to" style="width:200px;" list="carrier" 
-                        placeholder="テキスト入力もしくは選択して下さい" 
+                        placeholder="テキスト入力もしくは選択して下さい" value= "{{ old('request-to')}}"
                         autocomplete="off">
                     <datalist id="carrier">
                 {{--テスト用データ--}}
@@ -47,13 +47,18 @@
                 
                 <label>●配送先:
                     <input type="text" name="delivery_companyname" placeholder="会社名"  
-                    value={{ $address->companyname ?? ''}}><br>
+                    value="{{ old('delivery_companyname', isset($address->companyname) ? $address->companyname : '')}}"><br>
                     <input type="text" name="delivery_address" style="width:300px; margin-left:75px" placeholder="住所"
                     value={{ $address->address ?? '' }} ><br>
                     </span><input type="text" name="delivery_tel"  style="margin-left:75px" placeholder="電話番号"
                     value={{ $address->tel ?? '' }}>
                 </label><br>
-                <a href='{{ route('addresses') }}'>配送先を登録しておく</a><br>
+                <button  type="submit" formaction="/addresses/add" formmethod="post">
+                    配送先一覧に登録</button>
+                @if(isset($msg))
+                 {{ $msg }}
+                @endif
+                <br>
                 <label>●車種:
                    <input type="text" name="typetruck" style="width:200px;" list="truck" 
                         placeholder="テキスト入力もしくは選択して下さい" 

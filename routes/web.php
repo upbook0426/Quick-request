@@ -24,6 +24,8 @@ Route::get("addresses", [AddressesController::class, "index"])->name(
 Route::get("addresses/{id}", [AddressesController::class, "view"])->name(
     "address"
 );
+//登録
+Route::post("addresses/add", [AddressesController::class, "add"]);
 
 //依頼書入力
 Route::get("index", [RequestformController::class, "index"])->name("index"); //routeに名前
