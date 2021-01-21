@@ -14,7 +14,8 @@
     <p class="new"><a href=" {{ route('index')}}">新規配送先</a>
     
     <p class="list font">■登録配送先一覧</p>
-    <ul class="addresses">
+    <button type="button" onclick="window.location='{{ route('edit')}}">編集</button>
+    <a href="{{ route('edit')}}" class="btn btn-xs btn-info pull-right">Edit</a>
     {{--住所データを取得--}}
     @foreach ($addresses as $address)
     <li><a href="{{ route('address',$address->id) }}">

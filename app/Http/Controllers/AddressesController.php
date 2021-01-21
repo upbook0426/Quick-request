@@ -7,11 +7,11 @@ use App\Models\Address;
 
 class AddressesController extends Controller
 {
-    public function index()
+    public function list()
     {
         $addresses = Address::all();
         //配送先一覧
-        return view("addresses.index", ["addresses" => $addresses]);
+        return view("addresses.list", ["addresses" => $addresses]);
     }
     public function view($id)
     {
@@ -26,10 +26,16 @@ class AddressesController extends Controller
         $address->companyname = $request->delivery_companyname;
         $address->tel = $request->delivery_tel;
         $address->save();
-        $all = $request->all();
+        $post_data = $request->all();
 
-        return view("index", ["address" => $address])
-            ->with("msg", "登録できました")
-            ->compact("all");
+        return view("index", compact("post_data"), [
+            "address" => $address,
+        ])->with("msg", "登録できました");
+    }
+    public function edit()
+    {
+        $addresses = Address::all();
+        //配送先一覧
+        return view("addresses.edit", ["addresses" => $addresses]);
     }
 }

@@ -18,12 +18,16 @@ use App\Http\Controllers\AddressesController;
 */
 
 //配送先一覧
-Route::get("addresses", [AddressesController::class, "index"])->name(
+Route::get("addresses", [AddressesController::class, "list"])->name(
     "addresses"
 );
 Route::get("addresses/{id}", [AddressesController::class, "view"])->name(
     "address"
 );
+Route::get("addresses/edit", [AddressesController::class, "edit"])->name(
+    "edit"
+);
+
 //登録
 Route::post("addresses/add", [AddressesController::class, "add"]);
 

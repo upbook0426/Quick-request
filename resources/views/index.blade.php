@@ -25,7 +25,7 @@
            <br>
                 <label>●依頼先運送会社:</label>
                 <input type="text" name="request-to" style="width:200px;" list="carrier" 
-                        placeholder="テキスト入力もしくは選択して下さい" value= "{{ old('request-to')}}"
+                        placeholder="テキスト入力もしくは選択して下さい" value= "{{ $post_data['request-to'] ?? '' }}"
                         autocomplete="off">
                     <datalist id="carrier">
                 {{--テスト用データ--}}
@@ -35,14 +35,17 @@
                     </datalist>
                 <br>
                 <label>●引取日時:
-                    <input class="datepicker" name="pickdate" type="text" placeholder="日時を指定して下さい">
+                    <input class="datepicker" name="pickdate" type="text" placeholder="日時を指定して下さい"
+                    value= {{ $post_data['pickdate'] ?? ''}}>
                 </label><br>
                 <label for="pickplace">●引取先:</label>
-                    <textarea class="pickplace" name="pickplace" type="text" cols="35" rows="5">
+                    <textarea class="pickplace" name="pickplace" type="text" cols="35" rows="5"
+                    value= {{ $post_data['pickplace'] ?? ''}}>
                     </textarea> 
                 <br>
                 <label>●配送日時:
-                    <input class="datepicker" name="deliverydate" type="text" placeholder="日時を指定して下さい">
+                    <input class="datepicker" name="deliverydate" type="text" placeholder="日時を指定して下さい"
+                    value= {{ $post_data['deliverydate'] ?? ''}}>
                 </label><br>
                 
                 <label>●配送先:
@@ -62,7 +65,8 @@
                 <label>●車種:
                    <input type="text" name="typetruck" style="width:200px;" list="truck" 
                         placeholder="テキスト入力もしくは選択して下さい" 
-                        autocomplete="off">
+                        autocomplete="off"
+                        value= {{ $post_data['typetruck'] ?? ''}}>
                     <datalist id="truck">
                    <option value="2ton車">
                    <option value="4ton車">
@@ -70,16 +74,16 @@
                     </datalist>
                 </label><br>
                 <label>●Package:
-                    <input name="package" type="text">
+                    <input name="package" type="text" value= {{ $post_data['package'] ?? ''}}>
                 </label><br>
                 <label>●重量:
-                    <input name="weight" type="text">
+                    <input name="weight" type="text" value= {{ $post_data['weight'] ?? ''}}>
                 </label><br>
                 <label>●M3:
-                    <input name="M3" type="text">
+                    <input name="M3" type="text" value= {{ $post_data['M3'] ?? ''}}>
                 </label><br>
                 <label for="remark">●備考欄:</label>
-                <textarea name="remark" id="remark" cols="35" rows="3">
+                <textarea name="remark" id="remark" cols="35" rows="3" value= {{ $post_data['remark'] ?? ''}}>
                 </textarea>
                 <br>
                 <button class="submit_button" type="submit" formaction="/pdf" formmethod="post">
