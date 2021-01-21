@@ -8,15 +8,17 @@
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
    
 </head>
-<body id="index">
-    <p class="list font">■登録配送先一覧</p>
-    <ul class="addresses">
-    {{--住所データを取得--}}
-    @foreach ($addresses as $address)
-    <li><a href="{{ route('address',$address->id) }}">
-      {{ $address->companyname }}</a></li>
-    @endforeach
-    </ul>
-</body>
-
+        <body id="index">
+            <h1 class="tile">編集画面</h1>
+            <form>
+                <label>会社名:<input type="text" name="delivery_companyname" placeholder="会社名"  
+                    value="{{ old('delivery_companyname', isset($address->companyname) ? 
+                             $address->companyname : '')}}"></label><br>
+                <label>住所：<input type="text" name="delivery_address" style="width:300px" placeholder="住所"
+                    value={{ $address->address ?? '' }} ></label><br>
+                <label>電話番号:<input type="text" name="delivery_tel" placeholder="電話番号"
+                    value={{ $address->tel ?? '' }}></label><br>
+                <button type="submit" formaction="/addresses/add" formmethod="post">再登録</button>
+            </form>
+        </body>
 </html>

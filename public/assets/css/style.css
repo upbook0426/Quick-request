@@ -171,16 +171,31 @@ border-style: none;
 }
 
 .new {
-   font-size: 25px;
+   font-size: 15px;
 }
 .list {
-   font-size: 25px;
+   font-size: 15px;
    padding-bottom: 0;
    margin-bottom: 0;
 }
 
 .addresses {
   margin-top: 0;
-  font-size: 18px;
+  font-size: 10px;
 }
 
+/*編集ボタン*/
+.submit_button {
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: #248;
+  color: #fff;
+  border-style: none;
+  }
+
+.inline {
+   display:inline-block;
+   float: left;
+
+}

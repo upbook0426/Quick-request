@@ -13,6 +13,30 @@ class AddressesController extends Controller
         //配送先一覧
         return view("addresses.list", ["addresses" => $addresses]);
     }
+    public function edit_list()
+    {
+        $addresses = Address::all();
+        //配送先一覧
+        return view("addresses.edit_list", ["addresses" => $addresses]);
+    }
+    public function edit($id)
+    {
+        $address = Address::findOrFail($id);
+
+        return view("addresses.edit", ["address" => $address]);
+    }
+    public function update(Request $request)
+    {
+        $param = [
+            "address" => $request->delivery_address,
+            "companyname" => $request->delivery_companyname,
+            "tel" => $request->delivery_tel,
+        ];
+        DB::table("addresses")
+            ->where("id", $request->id)
+            ->update($param);
+        return redirect("/edit_list");
+    }
     public function view($id)
     {
         $address = Address::findOrFail($id);
@@ -31,11 +55,5 @@ class AddressesController extends Controller
         return view("index", compact("post_data"), [
             "address" => $address,
         ])->with("msg", "登録できました");
-    }
-    public function edit()
-    {
-        $addresses = Address::all();
-        //配送先一覧
-        return view("addresses.edit", ["addresses" => $addresses]);
     }
 }

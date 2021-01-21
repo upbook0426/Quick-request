@@ -24,9 +24,10 @@ Route::get("addresses", [AddressesController::class, "list"])->name(
 Route::get("addresses/{id}", [AddressesController::class, "view"])->name(
     "address"
 );
-Route::get("addresses/edit", [AddressesController::class, "edit"])->name(
-    "edit"
+Route::get("edit_list", [AddressesController::class, "edit_list"])->name(
+    "edit_list"
 );
+Route::get("edit/{id}", [AddressesController::class, "edit"])->name("edit");
 
 //登録
 Route::post("addresses/add", [AddressesController::class, "add"]);

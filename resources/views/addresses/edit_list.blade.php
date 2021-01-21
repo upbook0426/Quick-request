@@ -9,17 +9,12 @@
    
 </head>
 <body id="index">
-    <h1 class="font" >配送先選択<h1>
-    
-    <p class="new"><a href=" {{ route('index')}}">新規配送先</a></p>    
-    <p class="list font">■登録配送先一覧</p>
-    <button class="submit_button"><a href="{{ route('edit_list')}}" >編集</a></button>
-    <button class="submit_button" type="button" formaction="{{ route('edit_list')}}" formmethod="post">
-      PDF出力</button>
+    <p class="title">編集画面</p>
+    <p class="listfont">■登録配送先一覧</p>
     <ul class="addresses">
     {{--住所データを取得--}}
     @foreach ($addresses as $address)
-    <li><a href="{{ route('address',$address->id) }}">
+    <li><a href="{{ route('edit',$address->id) }}">
       {{ $address->companyname }}</a></li>
     @endforeach
     </ul>
