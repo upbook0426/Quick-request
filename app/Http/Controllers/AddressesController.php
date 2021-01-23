@@ -11,14 +11,14 @@ class AddressesController extends Controller
 {
     public function list()
     {
-        $addresses = Address::paginate(15);
+        $addresses = Address::paginate(5);
         //配送先一覧
 
         return view("addresses.list", ["addresses" => $addresses]);
     }
     public function edit_list()
     {
-        $addresses = Address::paginate(15);
+        $addresses = Address::paginate(5);
         //配送先一覧
         return view("addresses.edit_list", ["addresses" => $addresses]);
     }
@@ -36,7 +36,7 @@ class AddressesController extends Controller
         $address->address = $request->delivery_address;
         $address->tel = $request->delivery_tel;
         $address->save();
-        $addresses = Address::paginate(15);
+        $addresses = Address::paginate(5);
         //配送先一覧
         return redirect()->route("edit_list", [
             "addresses" => $addresses,
@@ -47,7 +47,7 @@ class AddressesController extends Controller
         /* $this->validate($request, Address::$rules);*/
         $address = Address::find($request->id)->delete();
 
-        $addresses = Address::paginate(15);
+        $addresses = Address::paginate(5);
         //配送先一覧
         return redirect()->route("edit_list", [
             "addresses" => $addresses,
@@ -59,18 +59,8 @@ class AddressesController extends Controller
 
         return view("index", ["address" => $address]);
     }
-    public function add(Request $request)
+    public function add(ValidateRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            "delivery_companyname" => "required",
-            "delivery_address" => "required",
-            "delivery_tel" => "required",
-        ]);
-        if ($validator->fails()) {
-            return redirect("index")
-                ->withErrors($validator)
-                ->withInput();
-        }
         $address = new Address();
         $address->address = $request->delivery_address;
         $address->companyname = $request->delivery_companyname;

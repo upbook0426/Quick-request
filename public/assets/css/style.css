@@ -8,8 +8,14 @@
   font-size: 30px;
   margin-left: 90px;
   font-weight: bold;
+  margin-bottom: 20px;
+}
+.list {
+  font-size: 20px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
+
 
 /** PDF **/
 .company-name {
@@ -126,17 +132,13 @@ textarea {
     text-align: left;
 }
 
-#right {
-    margin-left:100px;
+.error_coment {
+  margin-left: 45px;
+  color:red;
 }
 
-.submit_button {
-font-size: 1.4em;
-font-weight: bold;
-padding: 10px 30px;
-background-color: #248;
-color: #fff;
-border-style: none;
+#right {
+    margin-left:100px;
 }
 
 #loader-bg {
@@ -164,7 +166,7 @@ border-style: none;
 }
 
 
-/*addresses */
+/*配送先選択 */
 
 .font{
   font-family: 'Noto Sans JP', sans-serif;
@@ -173,25 +175,11 @@ border-style: none;
 .new {
    font-size: 20px;
 }
-.list {
-   font-size: 20px;
-   padding-bottom: 0;
-   margin-bottom: 0;
-}
 
 .addresses {
   margin-top: 0;
-  font-size: 12px;
+  font-size: 15px;
 }
-/*編集ボタン*/
-.edit_button {
-  font-size: 0.5em;
-  font-weight: bold;
-  padding: 5px 13px;
-  background-color: #248;
-  color: #fff;
-  border-style: none;
-  }
 
 .inline {
    display:inline-block;
@@ -200,4 +188,53 @@ border-style: none;
 .pagination{
   font-size: 14px;
   margin-left: 10px;
+}
+
+.large_button {
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: #248; 
+  color: #fff;
+  border-style: none;
+  border-radius:10px;
+
+}
+.large_button:hover {
+  background-color: #24d;
+  color: #fff;
+}
+
+.middle_button {
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 8px 18px;
+  background-color: #248; 
+  color: #fff;
+  border-style: none;
+  border-radius:10px;
+
+}
+.middle_button:hover {
+  background-color: #24d;
+  color: #fff;
+}
+.small_button {
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 5px 15px;
+  background-color: #248; 
+  color: #fff;
+  border-style: none;
+  border-radius:10px;
+
+}
+.small_button:hover {
+  background-color: #24d;
+  color: #fff;
+}
+
+.coment {
+  font-size: 13px;
+  color:rgb(255, 0, 43);
 }

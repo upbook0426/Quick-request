@@ -15,13 +15,13 @@
     
     <title>配送依頼書</title>
 </head>
-<body #index>
+<body>
  
-      <div class="font title">依頼入力フォーム</div>
+      <div class="font title">依頼書入力フォーム</div>
        <div class="form">
         <form >
            {{ csrf_field() }}
-           <a href='{{ route('addresses') }}'>戻る</a>
+           <a class="small_button" href='{{ route('addresses') }}'>戻る</a>
            <br>
                 <label>●依頼先運送会社:</label>
                 <input type="text" name="request-to" style="width:200px;" list="carrier" 
@@ -36,10 +36,10 @@
                 <br>
                 <label>●引取日時:
                     <input class="datepicker" name="pickdate" type="text" placeholder="日時を指定して下さい"
-                    value= {{ $post_data['pickdate'] ?? ''}}>
-                </label><br>
+                    value={{ $post_data['pickdate'] ??''}}>
+                    </label><br>
                 <label for="pickplace">●引取先:</label>
-                    <textarea class="pickplace" name="pickplace" type="text" cols="35" rows="5"
+                    <textarea class="pickplace" name="pickplace" type="text" cols="35" rows="3"
                     value= {{ $post_data['pickplace'] ?? ''}}>
                     </textarea> 
                 <br>
@@ -49,20 +49,22 @@
                 </label><br>
                 
                 <label>●配送先:
-                    @if($errors->has('delivery_companyname'))
-                    @foreach($errors->get('delivery_companyname')as $message) 
-                    {{$message}}<br> 
-                    @endforeach
-                    @endif
                     <input type="text" name="delivery_companyname" placeholder="会社名"  
                     value="{{ old('delivery_companyname', isset($address->companyname) ? $address->companyname : '')}}"><br>
                     <input type="text" name="delivery_address" style="width:300px; margin-left:75px" placeholder="住所"
-                    value={{ $address->address ?? '' }} ><br>
-                    </span><input type="text" name="delivery_tel"  style="margin-left:75px" placeholder="電話番号"
+                    value="{{ old('delivery_address', isset($address->address) ? $address->address : '')}}" ><br>
+                    <input type="text" name="delivery_tel"  style="margin-left:75px" placeholder="電話番号"
                     value={{ $address->tel ?? '' }}>
                 </label><br>
-                <button  type="submit" formaction="/addresses/add" formmethod="post">
-                    配送先一覧に登録</button>
+                @if (count($errors)> 0 )
+                        <ul class="error_coment">
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                @endif
+                <button  class="middle_button" type="submit" formaction="/addresses/add" formmethod="post" style="margin-left:75px">
+                    配送先を一覧に登録</button>
                 @if(isset($msg))
                  {{ $msg }}
                 @endif
@@ -91,7 +93,7 @@
                 <textarea name="remark" id="remark" cols="35" rows="3" value= {{ $post_data['remark'] ?? ''}}>
                 </textarea>
                 <br>
-                <button class="submit_button" type="submit" formaction="/pdf" formmethod="post">
+                <button class="middle_button" type="submit" formaction="/pdf" formmethod="post">
                     PDF出力</button>
                 <br>
                 <br>
@@ -101,13 +103,14 @@
                          autocomplete="off">
                      <datalist id="email">
                     {{--テスト用データ--}}
-                    <option value="upbook426@gmail.com">hohoge運送会社</option>
-                    <option value="up_book26@yahoo.co.jp">piyopiyo海陸輸送㈱</option>
+                    <option value="xxxxxxxxxxxxx@gmail.com">hohoge運送会社</option>
+                    <option value="xxxxxxxxxxxxx@yahoo.co.jp">piyopiyo海陸輸送㈱</option>
                      </datalist>
                  </label><br>
-                    <button class="submit_button" type="submit" class="notrepeat" formaction="/mail" formmethod="post" 
+                    <button class="middle_button" class="notrepeat" {{-- type="submit" formaction="/mail" formmethod="post"
                     data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> 
-                        データ送信中ですしばらくお待ちください。 ...">PDF添付・メール送信 </button>
+                        データ送信中ですしばらくお待ちください。 ..."> --}}> PDF添付・メール送信 </button>
+                    <p class="coment">↑ポートフォリオ用の為、送信元メールサーバのセキュリティ上、使用出来なくしております。</p>
             </form>
         </div> 
     </body>

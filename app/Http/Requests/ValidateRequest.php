@@ -13,9 +13,7 @@ class ValidateRequest extends FormRequest
      */
     public function authorize()
     {
-        if ($this->path() == "index") {
-            return true;
-        }
+        return true;
     }
 
     /**
@@ -26,15 +24,17 @@ class ValidateRequest extends FormRequest
     public function rules()
     {
         return [
-                //
-            ];
+            "delivery_companyname" => "required",
+            "delivery_address" => "required",
+            "delivery_tel" => "required",
+        ];
     }
     public function messages()
     {
         return [
             "delivery_companyname.required" => "会社名は必須です。",
-            "delivery_address" => "住所は必須項目です。",
-            "delvery_tel" => "電話番号は必須項目です.",
+            "delivery_address.required" => "住所は必須です。",
+            "delivery_tel.required" => "電話番号は必須です.",
         ];
     }
 }

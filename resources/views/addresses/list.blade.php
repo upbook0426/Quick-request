@@ -7,11 +7,11 @@
     <title>Addresses</title>
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 </head>
-<body id="index">
+<body>
 
-    <h1 class="font" >配送先選択<h1>
-    
-    <p class="new"><a href=" {{ route('index')}}">新規配送先</a></p>    
+    <div class="font title">配送先選択ページ</div>
+    <div class="form">
+    <a class="middle_button" href=" {{ route('index')}}">新規配送先</a>   
     <p class="list font">■登録配送先一覧</p>
     <ul class="addresses">
     {{--住所データを取得--}}
@@ -23,7 +23,8 @@
     <div class="pagination">
      {{ $addresses->links('vendor/pagination/semantic-ui')}}
     </div>
-    <a class="edit_button" href="{{ route('edit_list')}}" >編集</a>
-</body>
+    <a class="middle_button" href="{{ route('edit_list')}}" >編集</a>
+  </div>
+  </body>
 
 </html>

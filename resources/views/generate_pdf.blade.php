@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title> a </title>
+    <title> PDF </title>
     <style type="text/css">
        
         @font-face {
@@ -23,10 +23,10 @@
         </style>
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 </head>
-    <header> 
+    <header>
         <h1 class="company-name"> 
             ABC株式会社 
-        </h1> 
+        </h1>
           <p class="transport-company"> 
             {{ $data1['request-to']}} 御中
           </p>
@@ -72,11 +72,6 @@
            <div class="box-large">
                 <span class="box-title">(備考欄)</span>
                 <p>{{ $data1['remark'] }}</p> 
-            </div>
-            <div class="sign">
-                <p>ABC株式会社</p><br>
-                <p>Tel:123-456</p><br>
-                <p>Fax:123-456<p>
             </div>
         </body>
 </html>
