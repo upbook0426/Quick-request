@@ -49,6 +49,11 @@
                 </label><br>
                 
                 <label>●配送先:
+                    @if($errors->has('delivery_companyname'))
+                    @foreach($errors->get('delivery_companyname')as $message) 
+                    {{$message}}<br> 
+                    @endforeach
+                    @endif
                     <input type="text" name="delivery_companyname" placeholder="会社名"  
                     value="{{ old('delivery_companyname', isset($address->companyname) ? $address->companyname : '')}}"><br>
                     <input type="text" name="delivery_address" style="width:300px; margin-left:75px" placeholder="住所"

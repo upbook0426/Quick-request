@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
-    use HasFactory;
+    public static $rules = [
+        "companyname" => "required|unique:posts",
+        "address" => "required",
+        "tel" => "required",
+    ];
 }

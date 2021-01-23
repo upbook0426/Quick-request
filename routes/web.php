@@ -27,8 +27,14 @@ Route::get("addresses/{id}", [AddressesController::class, "view"])->name(
 Route::get("edit_list", [AddressesController::class, "edit_list"])->name(
     "edit_list"
 );
-Route::get("edit/{id}", [AddressesController::class, "edit"])->name("edit");
 
+Route::get("edit/{id}", [AddressesController::class, "edit"])->name("edit");
+Route::post("edit/{id}", [AddressesController::class, "update"])->name(
+    "edit_update"
+);
+Route::post("delete/{id}", [AddressesController::class, "delete"])->name(
+    "edit_delete"
+);
 //登録
 Route::post("addresses/add", [AddressesController::class, "add"]);
 

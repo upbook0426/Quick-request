@@ -171,24 +171,23 @@ border-style: none;
 }
 
 .new {
-   font-size: 15px;
+   font-size: 20px;
 }
 .list {
-   font-size: 15px;
+   font-size: 20px;
    padding-bottom: 0;
    margin-bottom: 0;
 }
 
 .addresses {
   margin-top: 0;
-  font-size: 10px;
+  font-size: 12px;
 }
-
 /*編集ボタン*/
-.submit_button {
-  font-size: 1.4em;
+.edit_button {
+  font-size: 0.5em;
   font-weight: bold;
-  padding: 10px 30px;
+  padding: 5px 13px;
   background-color: #248;
   color: #fff;
   border-style: none;
@@ -196,6 +195,9 @@ border-style: none;
 
 .inline {
    display:inline-block;
-   float: left;
+}
 
+.pagination{
+  font-size: 14px;
+  margin-left: 10px;
 }
