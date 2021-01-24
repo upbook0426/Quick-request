@@ -18,9 +18,7 @@ use App\Http\Controllers\AddressesController;
 */
 
 //配送先一覧
-Route::get("addresses", [AddressesController::class, "list"])->name(
-    "addresses"
-);
+Route::get("/", [AddressesController::class, "list"])->name("addresses");
 Route::get("addresses/{id}", [AddressesController::class, "view"])->name(
     "address"
 );
