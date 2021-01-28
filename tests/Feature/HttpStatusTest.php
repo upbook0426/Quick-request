@@ -15,7 +15,14 @@ class HttpStatusTest extends TestCase
      */
     public function testIndexStatus()
     {
-        $response = $this->get("/index");
-        $response->assertStatus(200);
+        $this->withoutExceptionHandling();
+        $response = $this->get("/");
+        $response->assertOk();
+
+        $response = $this->post("/index", [
+            "delivery_companyname" => "laravel株式会社",
+            "delivery_address" => "laravellaravel",
+            "delivery_tel" => "06-1234-1234",
+        ]);
     }
 }
