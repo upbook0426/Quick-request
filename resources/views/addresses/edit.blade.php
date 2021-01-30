@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Addresses</title>
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-   
-</head>
-        <body>
+@extends('layouts.app')
+@section('title','編集ページ')
+@section('content')
             <div class="font title">編集ページ</div>
             <div class="form">
              <form>
@@ -25,5 +17,4 @@
                     <a class="small_button" href="{{ route('edit_list')}}" >戻る</a>
              </form>
             </div>
-        </body>
-</html>
+@endsection

@@ -13,13 +13,14 @@ class AddressesController extends Controller
     {
         $addresses = Address::paginate(5);
         //配送先一覧
-
+        //dd($addresses);
         return view("addresses.list", ["addresses" => $addresses]);
     }
     public function edit_list()
     {
         $addresses = Address::paginate(5);
         //配送先一覧
+        //dd($addresses);
         return view("addresses.edit_list", ["addresses" => $addresses]);
     }
     public function edit($id)

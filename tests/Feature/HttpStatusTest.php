@@ -15,7 +15,6 @@ class HttpStatusTest extends TestCase
      */
     public function testIndexStatus()
     {
-        $this->withoutExceptionHandling();
         $response = $this->get("/");
         $response->assertOk();
 

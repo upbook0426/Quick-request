@@ -22,6 +22,7 @@ Route::get("/", [AddressesController::class, "list"])->name("addresses");
 Route::get("addresses/{id}", [AddressesController::class, "view"])->name(
     "address"
 );
+//配送先編集ページ
 Route::get("edit_list", [AddressesController::class, "edit_list"])->name(
     "edit_list"
 );
